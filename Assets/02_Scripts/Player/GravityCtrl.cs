@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GravityControl : MonoBehaviour
 {
@@ -12,12 +13,31 @@ public class GravityControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (cc.isGrounded && playerVelocity.y < 0)
+        Jump();
+        Gravity();
+
+        cc.Move(playerVelocity * Time.fixedDeltaTime);
+    }
+
+    private void Jump()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            if(cc.isGrounded)
+            {
+                playerVelocity.y += 6.0f;
+            }
+            Debug.Log("점프키를 감지했습니다.");
+        }
+    }
+
+    private void Gravity()
+    {
+        if (cc.isGrounded && playerVelocity.y < 0f)
         {
             playerVelocity.y = -2f;
         }
 
         playerVelocity.y += gravity * Time.fixedDeltaTime;
-        cc.Move(playerVelocity * Time.fixedDeltaTime);
     }
 }
