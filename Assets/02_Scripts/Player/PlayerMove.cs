@@ -26,12 +26,12 @@ public class PlayerMove : MonoBehaviour
         // Move 액션에 대한 콜백 등록
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
+        controls.Player.Jump.performed += ctx => Jump();
     }
 
     private void Update()
     {
         Move();
-        Jump();
         Gravity();
         cc.Move((move * speed + playerVelocity) * Time.deltaTime);
     }
@@ -43,14 +43,9 @@ public class PlayerMove : MonoBehaviour
 
     private void Jump()
     {
-        //
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (cc.isGrounded)
         {
-            if(cc.isGrounded)
-            {
-                playerVelocity.y += 6.0f;
-            }
-            //Debug.Log("점프키를 감지했습니다.");
+            playerVelocity.y += 6.0f;
         }
     }
 
