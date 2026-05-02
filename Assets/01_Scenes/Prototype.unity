@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 1382554009}
   - component: {fileID: 1382554008}
   - component: {fileID: 1382554007}
-  - component: {fileID: 1382554012}
+  - component: {fileID: 1382554013}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -573,7 +573,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1382554012
+--- !u!114 &1382554013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -582,9 +582,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382554006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa4ccf541f72254aabaac19e4e5b5e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f5acc04261d2d47b8855c31e80a60d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GravityControl
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  speed: 3
   gravity: -9.8
 --- !u!1 &2009423299
 GameObject:

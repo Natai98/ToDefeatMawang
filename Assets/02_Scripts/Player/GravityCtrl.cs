@@ -11,12 +11,12 @@ public class GravityControl : MonoBehaviour
         cc = GetComponent<CharacterController>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Jump();
         Gravity();
 
-        cc.Move(playerVelocity * Time.fixedDeltaTime);
+        cc.Move(playerVelocity * Time.deltaTime);
     }
 
     private void Jump()
