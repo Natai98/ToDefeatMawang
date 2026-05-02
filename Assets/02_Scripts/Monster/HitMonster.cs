@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HitMonster : MonoBehaviour, IDamage
 {
-    float hp = 1;
+    float hp = 1.0f;
 
     public void TakeDamage(float damage)
     {

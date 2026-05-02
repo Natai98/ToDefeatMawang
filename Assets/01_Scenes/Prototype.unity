@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 47459158}
   - component: {fileID: 47459157}
   - component: {fileID: 47459162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -939,6 +939,7 @@ GameObject:
   - component: {fileID: 1382554008}
   - component: {fileID: 1382554007}
   - component: {fileID: 1382554013}
+  - component: {fileID: 1382554014}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1081,6 +1082,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   speed: 3
   gravity: -9.8
+--- !u!114 &1382554014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382554006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26a3fc184468844bacecdb1b570c8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAction
 --- !u!1 &2009423299
 GameObject:
   m_ObjectHideFlags: 0

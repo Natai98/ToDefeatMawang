@@ -4,10 +4,10 @@ using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour, IMove
+public class PlayerMove : MonoBehaviour
 {
     [Header("플레이어 움직임 wasd")]
-    private PlayerControls controls;
+    public PlayerControls controls;
     private CharacterController cc;
     private Vector2 moveInput;
     private Vector3 move;
@@ -18,9 +18,6 @@ public class PlayerMove : MonoBehaviour, IMove
     private Vector3 playerVelocity = Vector3.zero;
     [SerializeField] private float gravity = -9.8f;
 
-
-
-
     private void Awake()
     {
         controls = new PlayerControls();
@@ -29,26 +26,31 @@ public class PlayerMove : MonoBehaviour, IMove
         // Move 액션에 대한 콜백 등록
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
-        controls.Player.Jump.performed += ctx => Jump();
     }
 
     private void Update()
     {
-        Gravity();
         Move();
+        Jump();
+        Gravity();
+        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
     }
 
-    public void Move()
+    private void Move()
     {
         move = new Vector3(moveInput.x, 0f, moveInput.y);
-        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
     }
 
     private void Jump()
     {
-        if (cc.isGrounded)
+        //
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            playerVelocity.y += 6.0f;
+            if(cc.isGrounded)
+            {
+                playerVelocity.y += 6.0f;
+            }
+            //Debug.Log("점프키를 감지했습니다.");
         }
     }
 
