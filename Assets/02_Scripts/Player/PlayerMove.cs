@@ -4,7 +4,7 @@ using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, IMove
 {
     [Header("플레이어 움직임 wasd")]
     private PlayerControls controls;
@@ -17,6 +17,9 @@ public class PlayerMove : MonoBehaviour
     [Header("플레이어 움직임 jump")]
     private Vector3 playerVelocity = Vector3.zero;
     [SerializeField] private float gravity = -9.8f;
+
+
+
 
     private void Awake()
     {
@@ -31,14 +34,14 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Move();
         Gravity();
-        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
+        Move();
     }
 
-    private void Move()
+    public void Move()
     {
         move = new Vector3(moveInput.x, 0f, moveInput.y);
+        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
     }
 
     private void Jump()
