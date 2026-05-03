@@ -8,7 +8,7 @@ public class AttackAction : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controls = GetComponent<PlayerMove>().controls;
+        controls = GameManager.Instance.controls;
 
         controls.Player.Attack.performed += ctx => Attack();
     }
@@ -20,6 +20,7 @@ public class AttackAction : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         int interactLayerMask = LayerMask.GetMask("InteractObject");
+        float atk = GameManager.Instance.atk;
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactLayerMask))
         {
@@ -28,7 +29,7 @@ public class AttackAction : MonoBehaviour
             float distance = Vector3.Distance(transform.position, hit.collider.transform.position);
             if(distance < 10.0f)
             {
-                hit.collider.GetComponent<IDamage>()?.TakeDamage(1.0f);
+                hit.collider.GetComponent<IDamage>()?.TakeDamage(atk);
                 Debug.Log("공격이 적중했습니다.");
             }
             else

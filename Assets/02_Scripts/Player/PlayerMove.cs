@@ -18,9 +18,9 @@ public class PlayerMove : MonoBehaviour
     private Vector3 playerVelocity = Vector3.zero;
     [SerializeField] private float gravity = -9.8f;
 
-    private void Awake()
+    private void Start()
     {
-        controls = new PlayerControls();
+        controls = GameManager.Instance.controls;
         cc = GetComponent<CharacterController>();
 
         // Move 액션에 대한 콜백 등록
@@ -64,14 +64,6 @@ public class PlayerMove : MonoBehaviour
         playerVelocity.y += gravity * Time.fixedDeltaTime;
     }
 
-    void OnEnable()
-    {
-        controls.Player.Enable();
-    }
-
-    void OnDisable()
-    {
-        controls.Player.Disable();
-    }
+    
 
 }

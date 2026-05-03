@@ -1589,6 +1589,7 @@ GameObject:
   - component: {fileID: 1382554013}
   - component: {fileID: 1382554014}
   - component: {fileID: 1382554015}
+  - component: {fileID: 1382554016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1757,6 +1758,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitPlayer
   Hpbar: {fileID: 1913745172}
+--- !u!114 &1382554016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382554006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfb2808f69898544954a42a41cf5204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player: {fileID: 0}
+  playerName: 
+  money: 0
+  hp: 20
+  maxHp: 20
+  mp: 10
+  maxMp: 10
+  def: 0
+  atk: 0
 --- !u!1 &1558560308
 GameObject:
   m_ObjectHideFlags: 0
