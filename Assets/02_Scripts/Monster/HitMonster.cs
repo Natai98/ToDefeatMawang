@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HitMonster : MonoBehaviour, IDamage
 {
-    float hp = 10f;
+    public float hp = 10f;
 
     [SerializeField] private Slider hpBar;
 
