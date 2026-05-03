@@ -30,15 +30,15 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Move();
         Jump();
         Gravity();
-        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
+        Move();
     }
 
     private void Move()
     {
         move = new Vector3(moveInput.x, 0f, moveInput.y);
+        cc.Move((move * speed + playerVelocity) * Time.deltaTime);
     }
 
     private void Jump()
