@@ -1,9 +1,5 @@
 using UnityEngine;
 
-public interface IMove
-{
-    void Move();
-}
 
 public interface IDamage
 {
@@ -13,4 +9,5 @@ public interface IDamage
 public interface IGet
 {
     void Get();
+    void Use();
 }
