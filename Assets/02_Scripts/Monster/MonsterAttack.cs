@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MonsterAttack : MonoBehaviour
 {
+    [SerializeField] private MonsterSO monsterStat;
     private bool attackReady = true;
     private GameObject player;
     private float distance = 100f;
@@ -30,9 +31,9 @@ public class MonsterAttack : MonoBehaviour
             distance = Vector3.Distance(player.transform.position, transform.position);
         }
 
-        if(distance < 1.2f && attackReady)
+        if(distance <= monsterStat.AttackRange && attackReady)
         {
-            player.GetComponent<IDamage>()?.TakeDamage(1.0f);
+            player.GetComponent<IDamage>()?.TakeDamage(monsterStat.ATK);
             attackReady = false;
         }
     }

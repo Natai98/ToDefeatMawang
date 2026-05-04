@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitMonster
   hp: 10
   hpBar: {fileID: 385133915}
+  monsterStat: {fileID: 11400000, guid: f246e009e9be8cb44af184581a8d8516, type: 2}
 --- !u!114 &47459163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3af61cf28151ec4f85887f32242ca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterAttack
+  monsterStat: {fileID: 11400000, guid: f246e009e9be8cb44af184581a8d8516, type: 2}
 --- !u!114 &47459164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec794a7bbd56d7144916a3a2ea83de65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMove
+  monsterStat: {fileID: 11400000, guid: f246e009e9be8cb44af184581a8d8516, type: 2}
 --- !u!1 &124228767
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
+    [SerializeField] private MonsterSO monsterStat;
     private GameObject player;
     private Rigidbody rb;
 
@@ -21,10 +22,10 @@ public class MonsterMove : MonoBehaviour
             transform.forward = dir;
 
             //Animation에 적용할 speed
-            float speed = Mathf.Clamp(distance - 1.2f, 0f, 1.0f);
+            float speed = Mathf.Clamp(distance - monsterStat.AttackRange + 0.1f, 0f, 1.0f);
             //실제 움직임에 적용할 speed
             float rgspeed = speed * 0.1f;
-            rb.MovePosition(transform.position + transform.forward * 2.0f * rgspeed);
+            rb.MovePosition(transform.position + transform.forward * monsterStat.Speed * rgspeed);
             yield return new WaitForSeconds(0.02f);
         }
     }
