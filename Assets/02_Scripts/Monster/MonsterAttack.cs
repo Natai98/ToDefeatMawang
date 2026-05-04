@@ -4,12 +4,13 @@ using UnityEngine;
 public class MonsterAttack : MonoBehaviour
 {
     private bool attackReady = true;
-    private GameObject player => GameObject.FindGameObjectWithTag("Player");
+    private GameObject player;
     private float distance = 100f;
 
     private IEnumerator Start()
     {
         yield return null;
+        player = GameManager.Instance.player;
         while(true)
         {
             if (!attackReady)

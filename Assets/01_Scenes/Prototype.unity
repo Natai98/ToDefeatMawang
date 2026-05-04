@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 47459157}
   - component: {fileID: 47459162}
   - component: {fileID: 47459163}
+  - component: {fileID: 47459164}
   m_Layer: 7
   m_Name: Monster
   m_TagString: Monster
@@ -290,6 +291,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3af61cf28151ec4f85887f32242ca61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterAttack
+--- !u!114 &47459164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47459156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec794a7bbd56d7144916a3a2ea83de65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterMove
 --- !u!1 &124228767
 GameObject:
   m_ObjectHideFlags: 0
