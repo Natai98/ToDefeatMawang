@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMove
   monsterStat: {fileID: 11400000, guid: f246e009e9be8cb44af184581a8d8516, type: 2}
+  canMove: 1
 --- !u!1 &124228767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2856338535776337305}
   - component: {fileID: 2809251369914690797}
+  - component: {fileID: 2859355577262230720}
   m_Layer: 0
   m_Name: Slime_Green
   m_TagString: Untagged
@@ -2734,6 +2736,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2859355577262230720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859355577262230719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3898775396c8ddc4bb92c9a343e64dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAttackTrigger
 --- !u!1 &2859355577337990409
 GameObject:
   m_ObjectHideFlags: 0

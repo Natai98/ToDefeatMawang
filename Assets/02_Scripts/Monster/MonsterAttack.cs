@@ -4,20 +4,23 @@ using UnityEngine;
 public class MonsterAttack : MonoBehaviour
 {
     [SerializeField] private MonsterSO monsterStat;
+    private Animator anim;
     private bool attackReady = true;
     private GameObject player;
     private float distance = 100f;
 
     private IEnumerator Start()
     {
+        anim = transform.GetChild(1).GetComponent<Animator>();
         yield return null;
         player = GameManager.Instance.player;
         while(true)
         {
-            if (!attackReady)
+            if (distance <= monsterStat.AttackRange)
             {
+                GetComponent<MonsterMove>().canMove = false;
+                anim.SetTrigger("Attack");
                 yield return new WaitForSeconds(5.0f);
-                attackReady = true;
             }
 
             yield return null;
@@ -30,24 +33,20 @@ public class MonsterAttack : MonoBehaviour
         {
             distance = Vector3.Distance(player.transform.position, transform.position);
         }
-
-        if(distance <= monsterStat.AttackRange && attackReady)
-        {
-            player.GetComponent<IDamage>()?.TakeDamage(monsterStat.ATK);
-            attackReady = false;
-        }
     }
 
-    void OnCollisionEnter(Collision other)
+    public void Attack()
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(distance <= monsterStat.AttackRange)
         {
-            // if (attackReady)
-            // {
-            //     other.gameObject.GetComponent<IDamage>()?.TakeDamage(1.0f);
-            //     attackReady = false;
-            // }
+            player.GetComponent<IDamage>()?.TakeDamage(monsterStat.ATK);
         }
+        Invoke("MoveAgain", 0.3f);
+    }
+
+    private void MoveAgain()
+    {
+        GetComponent<MonsterMove>().canMove = true;
     }
 
     void OnDisable()

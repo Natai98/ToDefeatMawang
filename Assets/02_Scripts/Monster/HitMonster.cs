@@ -8,10 +8,14 @@ public class HitMonster : MonoBehaviour, IDamage
     [SerializeField] private Slider hpBar;
     [SerializeField] private MonsterSO monsterStat;
 
+    private Animator anim;
+
     private void Start()
     {
         hpBar.value = 1.0f;
         hp = monsterStat.HP;
+
+        anim = transform.GetChild(1).GetComponent<Animator>();
     }
 
     public void TakeDamage(float damage)
@@ -26,6 +30,7 @@ public class HitMonster : MonoBehaviour, IDamage
 
     private void Die()
     {
-        Destroy(this.gameObject);
+        anim.SetTrigger("Die");
+        Destroy(this.gameObject, 2.0f);
     }
 }
