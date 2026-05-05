@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,8 +7,9 @@ public class AttackAction : MonoBehaviour
     private PlayerControls controls;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private IEnumerator Start()
     {
+        yield return null;
         controls = GameManager.Instance.controls;
 
         controls.Player.Attack.performed += ctx => Attack();
@@ -15,6 +17,7 @@ public class AttackAction : MonoBehaviour
 
     private void Attack()
     {
+        if(controls == null) return;
         Debug.Log("어택!!");
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -41,5 +44,10 @@ public class AttackAction : MonoBehaviour
         {
             return;
         }
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class MonsterUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Transform camTransform;
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        camTransform = Camera.main.transform;
+        transform.LookAt(transform.position + (camTransform.rotation * Vector3.forward));
     }
 }

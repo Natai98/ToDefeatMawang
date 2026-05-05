@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
@@ -18,8 +19,9 @@ public class PlayerMove : MonoBehaviour
     private Vector3 playerVelocity = Vector3.zero;
     [SerializeField] private float gravity = -9.8f;
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return null;
         controls = GameManager.Instance.controls;
         cc = GetComponent<CharacterController>();
 
@@ -30,6 +32,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        if(controls == null) return;
+
         Jump();
         Gravity();
         Move();
@@ -64,6 +68,11 @@ public class PlayerMove : MonoBehaviour
         playerVelocity.y += gravity * Time.fixedDeltaTime;
     }
 
-    
+    void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+
 
 }
