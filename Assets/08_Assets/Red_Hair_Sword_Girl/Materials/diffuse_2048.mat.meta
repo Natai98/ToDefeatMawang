@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3e5fbcef6d854a34ca5d276a9e2e997a
+timeCreated: 1514532879
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 108714
+  packageName: Red Hair Sword Girl
+  packageVersion: 1.1
+  assetPath: Assets/Red_Hair_Sword_Girl/Materials/diffuse_2048.mat
+  uploadId: 229423

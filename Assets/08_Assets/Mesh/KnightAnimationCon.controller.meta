@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24158dd42f3c72f498ed04ae8f35ef62
+timeCreated: 1468405505
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 67207
+  packageName: 'Knight : Cartoon Male Character'
+  packageVersion: 1.0
+  assetPath: Assets/Mesh/KnightAnimationCon.controller
+  uploadId: 127121

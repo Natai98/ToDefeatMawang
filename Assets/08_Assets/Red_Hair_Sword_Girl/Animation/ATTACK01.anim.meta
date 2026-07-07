@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 423aff1053769b14ca56e52c07b698b1
+timeCreated: 1514533048
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 108714
+  packageName: Red Hair Sword Girl
+  packageVersion: 1.1
+  assetPath: Assets/Red_Hair_Sword_Girl/Animation/ATTACK01.anim
+  uploadId: 229423
